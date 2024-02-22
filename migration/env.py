@@ -7,7 +7,6 @@ from alembic import context
 
 from db.models import *
 
-import config as env_config
 
 
 # this is the Alembic Config object, which provides
@@ -43,8 +42,7 @@ def run_migrations_offline() -> None:
     script output.
 
     """
-    # url = config.get_main_option("sqlalchemy.url")
-    url = env_config.DB_URL_ALEMBIC
+    url = config.get_main_option("sqlalchemy.url")
     context.configure(
         url=url,
         target_metadata=target_metadata,
