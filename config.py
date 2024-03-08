@@ -4,6 +4,13 @@ from dotenv import load_dotenv
 load_dotenv()
 
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
+
+WEB_SERVER_HOST = os.environ.get("WEB_SERVER_HOST")
+WEB_SERVER_PORT = int(os.environ.get("WEB_SERVER_PORT"))
+
+WEBHOOK_PATH = f'/webhook/{BOT_TOKEN}'#'#os.environ.get("WEBHOOK_PATH")
+WEBHOOK_URL = os.environ.get("WEBHOOK_URL")
+
 DB_URL = os.environ.get("DB_URL")
 DB_URL_ALEMBIC = os.environ.get("DB_URL_ALEMBIC")
 PGADMIN_USER = os.environ.get("PGADMIN_USER")

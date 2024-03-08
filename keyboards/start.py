@@ -20,6 +20,7 @@ def menu_button_personal_page(**kwargs):
     url = 'https://usich-github-io.vercel.app/profile.html'
     url_params = '&'.join('{}={}'.format(key, val) for key, val in sorted(kwargs.items()))
     menu_button = MenuButtonWebApp(text="Показать карту",
+                                   # web_app=WebAppInfo(url='https://bagira-zoo.club/catalog/stock/'))
                                    web_app=WebAppInfo(url=f"{url}?{url_params}"))
     return menu_button
 

@@ -1,4 +1,5 @@
 import json
+import logging
 
 from aiogram import Router, F, types, Bot, enums
 from aiogram.filters import Command, CommandStart
@@ -16,6 +17,7 @@ router = Router()
 
 @router.message(CommandStart())
 async def cmd_start(message: Message, session: AsyncSession, bot: Bot):
+    logging.debug(f"Re")
     await bot.set_chat_menu_button(chat_id=message.chat.id, menu_button=MenuButtonDefault())
     result = await session.execute(select(User).where(User.chat_id == int(message.chat.id)))
     user = result.scalar()
